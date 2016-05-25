@@ -10,16 +10,35 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var mainLbl: UILabel!
+    
+    var phrases = ["Booting from floppy....\n", "Reading from disk....\n", "Updating registry...\n", ".........\n", "..............\n", "....................\n", "Welcome, Jessica. \n It is nice to see you again\n"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        mainLbl.text = ""
+        
+//        for blah in 0 ..< phrases.count {
+//            var txt = mainLbl.text!
+//            txt += phrases[blah]
+//            mainLbl.text = txt
+//        }
+//        
+//        var x = 0
+//        repeat {
+//            var txt = mainLbl.text!
+//            txt += phrases[x]
+//            mainLbl.text = txt
+//            x += 1
+//        } while x < phrases.count
+        
+        for phrase in phrases {
+            var txt = mainLbl.text!
+            txt += phrase
+            mainLbl.text = txt
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 
